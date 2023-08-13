@@ -18,17 +18,14 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-env = environ.Env(
-    DEBUG = (bool, False)
-)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("KEY")
+SECRET_KEY = "django-insecure-dxx^d#94u2g=$6zz4sujl_2$uv$#)u2=qnlbj-@il(4b2ay401"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env(True)
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -132,10 +129,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-if DEBUG:
-    STATICFILES_DIRS = [BASE_DIR/ 'static']
-else:
-    STATIC_ROOT = BASE_DIR / 'static'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
