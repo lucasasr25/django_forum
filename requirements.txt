@@ -1,5 +1,4 @@
 Django==4.2.4
 django_environ==0.10.0
-django_heroku==0.3.1
 django_resized==1.0.2
 django_taggit==4.0.0
