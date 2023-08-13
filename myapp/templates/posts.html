@@ -1,0 +1,81 @@
+{% load static %}
+{%load hitcount_tags%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MyForum</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=REM:wght@100&family=Tinos&display=swap" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="forum-header">
+                <div class = "forum-title">
+                    <div class="forum-header-image"><a href="{% url 'index' %}">
+                        <img onmouseenter="bigImg(this)" onmouseleave="a(this)" src="{% static 'image1.png' %}" id = "forum_girl" alt="forum_girl" width="100" height="100">
+                    </a></div>
+                    <div class="title"><h1>The Tech Disclousure</h1>
+                        <div class="title-user">
+                            {%if request.user.is_authenticated%}
+                            <div class="user logged"><a href="{%url 'logout'%}" style="text-decoration: none; color: #ffffff;">Logout</a></div>
+                            <div class="user logged"><a href="{%url 'createpost'%}" style="text-decoration: none; color: #ffffff;">+ Create Post</a></div>
+                            <div class="user logged"><a href="{%url 'update_profile'%}" style="text-decoration: none; color: #ffffff;">Update/Delete Profile {{user}}</a></div>
+                            {%else%}
+                            <div class="user"><a href="{%url 'signin'%}">Signin</a></div>
+                            <div class="user"><a href="{%url 'signup'%}">Signup</a></div>
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+                <div class = "forum-Information">
+                    <hr>
+                        <h2>Enter the shadows of this Tech-Disclosure Forum, where unearthly truths have come to light. 
+                            Embrace the enigma as we delve into the mysterious realm that disclosure has unveiled &#127782.
+                        </h2>
+
+                </div>
+            </div>
+            <hr>
+            <div class="posts-container">
+                <div class = "posts-status">
+                    <div class="status post-head-columns">General Chat</div>
+                </div>
+                {%for post in posts%} 
+                <div class = "table-row">
+                    <div class="status-column"><span class="material-symbols-outlined">heart_plus</span></div>
+                    <div class="subject-column"><a href="{{post.get_url}}" style="text-decoration: none; color: #ff0000;">{{post.title}}
+                        <br>
+                        <div style="font-family:'Times New Roman', Times, serif; font-size:medium;">{{post.user}}</div>
+                    </div></a>
+                    <div class="replies-column">
+                        <dt>Replies/Views</dt>
+                        <dt>{{post.num_comments}}/{%get_hit_count for post%}</dt>
+                    </div>
+                    <div class="last-column">
+                        <dt>Last reply</dt>
+                        <dt>{{post.last_reply.user}}</dt>
+                    </div>
+                </div> 
+                {%endfor%}
+            </div>
+            <hr>
+            <div class="navigation">
+                <div class="pages">{% for num_page in posts.paginator.page_range %}pages: <a href="?page={{num_page}}" style="text-decoration: none;">{{num_page}}</a></div> {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'main.js' %}"></script>
+    </body>
+</html>
+{% endblock content %}

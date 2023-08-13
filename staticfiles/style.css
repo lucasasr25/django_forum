@@ -1,0 +1,363 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(to right, rgb(190, 190, 190), white);
+}
+
+.forum-body{
+    /*background: linear-gradient(to right, black, white);*/
+    background-color: black;
+    font-size: 18px;
+    padding: 20px;
+    color: white;
+}
+
+.edit_forum_girl{
+    padding: 2px;
+    filter: contrast(300%);
+}
+
+.forum-header-image{
+    background-color: black;
+    padding: 2px;
+    box-shadow: 2px 2px cadetblue;
+}
+
+
+.Topic{
+    box-shadow: 1px 1px 4px rgb(0, 0, 0);
+    margin-bottom: 15px;
+    padding: 24px;
+    background-color: rgba(56, 56, 56, 0.384);
+}
+
+.Topic-title{
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(253, 47, 47);
+}
+
+.forum-title{
+    display: flex;
+}
+
+.search{
+    color: white;
+    display: flex;
+    padding: 20px;
+}
+
+.search input{
+    width: 10%;
+}
+
+
+.forum-status{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.head-columns{
+    text-align: center;
+}
+
+
+.title{
+    right: 5%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgb(80, 80, 80);
+}
+
+.title-user{
+    display: flex;
+}
+
+.title-user .user{
+    margin-left: 22px;
+}
+
+.logged{
+    font-size: larger; 
+    background-color: rgb(77, 76, 76); 
+    border-radius: 5px; 
+    padding: 5px;
+}
+/*posts.html */
+.posts-status{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.post-head-columns{
+    padding: 1px;
+    color: rgb(255, 255, 255);
+    margin-left: 15px;
+    text-align: center;
+}
+
+/*Table */
+
+.table-row{
+    display: flex;
+    margin: 4px;
+    border-radius: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 1px 1px 8px;
+
+    background-color: rgba(56, 56, 56, 0.384);
+}
+
+.table-row .status-column, .table-row .subject-column, .table-row .replies-column, .table-row .last-column{
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-row .status-column{
+    flex: 10%;
+}
+
+.table-row .subject-column{
+    flex: 50%;
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+}
+
+.table-row .replies-column{
+    flex: 15%;
+    align-items: center;
+}
+
+.table-row .last-column{
+    flex: 15%
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* Navigation */
+
+.navigation{
+    display: flex;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.pages{
+    margin-left: 45%;
+    position: absolute;
+    align-self: center;
+}
+
+.posts-container{
+    border-radius: 1px;
+    padding: 1px;
+    /*background: linear-gradient(to right, rgb(19, 19, 19), rgb(252, 252, 252));*/
+    background-color: rgb(34, 34, 34);
+}
+
+
+/*Post*/
+
+.post-container{
+    font-weight: bolder;
+    background-color: rgba(194, 194, 194, 0.705);
+    margin-bottom: 20px;
+    font-size: x-large;
+    box-shadow: 2px 2px 12px rgb(0, 71, 73);
+    border-radius: 0px;
+    padding: 5px;
+}
+
+.post-container-comment{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: rgba(139, 139, 139, 0.671);
+    font-size: 20px;
+    box-shadow: 0px 0px 4px;
+    border-radius: 0px;
+    padding: 5px;
+}
+
+.post-container-reply{
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 8px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.671);
+    font-size: 18px;
+    box-shadow: 0px 0px 3px;
+    border-radius: 0px;
+    padding: 5px;
+}
+
+.bar{
+    display: flex;
+}
+
+.bar .post-author{
+    flex: 20%;
+}
+
+.bar .post-content{
+    flex: 80%;
+    margin-left: 10%;
+}
+
+.post{
+    display: flex;
+}
+
+.post .author {
+    flex: 20%;
+}
+
+.post .name{
+    flex: 20%;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.post .content{
+    flex: 80%;
+    margin-left: 15%;
+}
+
+.post .author .user-status{
+    font-size: large;
+    margin-top: 10px;
+}
+
+.post .author .imageuser{
+    width: 150px;
+    box-shadow: 2px 2px 2px cadetblue;
+}
+
+.post-container button{
+    margin-top: 150px;
+    height: 60px;
+    width: 90px;
+}
+
+.post-container-comment button{
+    margin-top: 150px;
+    height: 60px;
+    width: 90px;
+}
+.comment{
+    margin-top: 10px;
+}
+
+.comment textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+
+
+@media screen and (max-width: 768px){
+    html{
+        font-size: 12px;
+    }
+
+    .post-container button{
+        margin-top: 150px;
+        height: 30px;
+        width: 40px;
+        font-size: 6px;
+    }
+    
+    .post-container{
+        font-size: small;
+    }
+
+    .post .author .imageuser{
+        width: 70px;
+    }
+
+    .title-user{
+        display: block;
+    }
+
+    .logged{
+        font-size: large; 
+        background-color: rgb(77, 76, 76); 
+        border-radius: 3px; 
+        padding: 2px;
+    }
+
+    .title-user .user{
+        margin: 4px
+    }
+    
+    
+    .test{
+        width: 70px;
+        height: 70px;
+    }
+
+    .forum-status{
+        display: grid;
+        font-size: large;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+    }
+
+    .posts-status{
+        font-size: 16px;
+    }
+
+    .forum-header-image{
+        margin-bottom: 50px;
+    }
+    .table-row .status-column, .table-row .subject-column, .table-row .replies-column, .table-row .last-column{
+        font-size: 16px;
+    }
+    
+
+    .head-columns {
+        align-self: center;
+    }
+
+    .search input{
+        width: 30%;
+    }
+
+}
+
+@media screen and (max-width: 300px){
+    html{
+        font-size: 8px;
+    }
+
+    .posts-status{
+        font-size: 8px;
+    }
+
+    .table-row .status-column, .table-row .subject-column, .table-row .replies-column, .table-row .last-column{
+        font-size: 8px;
+    }
+
+}

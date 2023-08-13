@@ -1,0 +1,161 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>MyForum</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=REM:wght@100&family=Tinos&display=swap" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="forum-header">
+                <div class = "forum-title">
+                    <div class = "forum-title">
+                        <div class="forum-header-image"><a href="{{post.categories.all.0.get_url}}">
+                            <img onmouseenter="bigImg(this)" onmouseleave="a(this)" src="{% static 'image1.png' %}" id = "forum_girl" alt="forum_girl" width="100" height="100">
+                        </div>
+                    </a></div>
+                    <div class="title"><h1>The Tech Disclousure</h1>
+                        <div class="title-user">
+                            {%if request.user.is_authenticated%}
+                            <div class="user logged"><a href="{%url 'logout'%}" style="text-decoration: none; color: #ffffff;">Logout</a></div>
+                            <div class="user logged"><a href="{%url 'createpost'%}" style="text-decoration: none; color: #ffffff;">+ Create Post</a></div>
+                            
+                            <div class="user logged"><a href="{%url 'update_profile'%}" style="text-decoration: none; color: #ffffff;">Update/Delete Profile {{user}}</a></div>
+                            {%else%}
+                            <div class="user"><a href="{%url 'signin'%}">Signin</a></div>
+                            <div class="user"><a href="{%url 'signup'%}">Signup</a></div>
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="post-container">
+                    <div class="bar">
+                        <div class="post-author">
+                            Author: {{post.user}}<br>
+                            ~ Post
+                        </div>
+                        <div class="post-content">
+                            Content: {{post.title}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "post">
+                        <div class="author">
+                            <div class="name">@{{post.account}}</div>
+                            <div class="imageuser">
+                                <img class = "test" src="{% static 'Unknown.png' %}" alt="Unknown" width="150" height="150">
+                            </div>
+                            <div class="user-status">Replies: {{post.num_comments}} Date: {{post.last_reply.date|date}}</div> 
+                        </div>
+                        <div class="content">
+                            {{post.content}}
+                        </div>
+                        {%if request.user.is_authenticated%}
+                        <button onclick="showcomment()">Comment</button>
+                        {%endif%}
+                    </div>
+                    {%if request.user.is_authenticated%}
+                    <form action="." method="post">
+                        {% csrf_token %}
+                        <div class="comment" id="comment{{comment.id}}" style="display: none;">
+                            <textarea name="content" id="" placeholder="write here..."></textarea><p>
+                            <input type="submit" value="Submit" name = "comment-form">
+                        </div>
+                    </form>
+                    {%else%}
+                    <div class="must-log" style="color: red;"><hr>You have to be logged to comment</div>
+                    {%endif%}
+            </div>
+            <!--Comment-->
+            {%for comment in post.comments.all%}
+            <div class="post-container-comment" style="width: 97.5%; margin-left: 2.5%;">
+                    <div class="bar">
+                        <div class="post-author">
+                            Author: {{comment.user.fullname}}<br>
+                            ~ Comment
+                        </div>
+                        <div class="post-content">
+                            Reply to: {{post.title}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "post">
+                        <div class="author">
+                            <div class="name">@{{comment.account}}</div>
+                            <div class="imageuser">
+                                <img class = "test" src="{% static 'Unknown.png' %}" alt="Unknown" width="150" height="150">
+                            </div>
+                            <div class="user-status">Replies:{{comment.num_replies}} Date: {{comment.date|date}}</div> 
+                        </div>
+                        <div class="content">
+                            {{comment.content}}
+                        </div>
+                        {%if request.user.is_authenticated%}
+                        <button onclick="showReply('comment{{comment.id}}')">Reply</button>
+                        {%endif%}
+                    </div>
+                    {%if request.user.is_authenticated%}
+                    <form action="." method="post">
+                    {% csrf_token %}
+                        <div class ="comment" id = "comment{{comment.id}}" style="display: none;">
+                            <textarea name="reply" id="" placeholder="write here..."></textarea><p>
+                            <input type="submit" value="submit" name="reply-form">
+                            <input type="hidden" name="comment-id" value="{{comment.id}}">
+                        </div>
+                    </form>
+                    {%else%}
+                    <div class="must-log" style="color: red;"><hr>You have to be logged to reply</div>
+                    {%endif%}     
+            </div>
+            <!--Reply-->
+            {%for reply in comment.replies.all%}
+            <div class="post-container-reply" style="width: 95%; margin-left: 5%;">
+                    <div class="bar">
+                        <div class="post-author">
+                            Author: {{reply.user.fullname}}<br>
+                            ~ Reply
+                        </div>
+                        <div class="post-content">
+                            Reply to: {{comment.user}} ({{comment.account}})
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "post">
+                        <div class="author">
+                            <div class="name">@{{reply.account}}</div>
+                            <div class="imageuser">
+                                <img class = "test" src="{% static 'Unknown.png' %}" alt="Unknown" width="150" height="150">
+                            </div>
+                            <div class="user-status">&#127782&#127782&#127782&#127782</div> 
+                        </div>
+                        <div class="content">
+                            {{reply.content}}
+                        </div>
+                    </div>     
+            </div>
+            {%endfor%}
+            {%endfor%}
+
+            <hr>
+        </div>
+    </body>
+    
+     <script src="{% static 'main.js' %}"></script>
+    
+</html>
+
+{% endblock content %}

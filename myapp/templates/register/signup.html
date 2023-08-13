@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{%load static%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<html>
+    <div class = "" style="background-image: url({%static '/2931357.png'%});background-repeat: no-repeat; background-size: cover; background-position:center;">
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        
+
+        <div style="text-align: left; background-color: rgba(248, 248, 248, 0.767); width: 95%; padding: 8px; border-radius: 12px; box-shadow: 2px 2px 12px black;">
+            <h1 style= "color:rgb(255, 0, 0); font-family: 'Courier New', Courier, monospace;">Create An Account</h1>
+            <form method="POST" action="." style="margin-left:0px;margin-bottom: 150px;font-weight: bolder; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: large;">
+                {% csrf_token %}    
+                {{form|crispy}}
+                <input type="submit" value="Signup"  style="margin-block:50px;">
+            </form>
+        </div>
+    </div>
+</html>
+
+
+{% endblock content %}
