@@ -2,8 +2,10 @@
 
 ![4](https://github.com/lucasasr25/django_forum/assets/90220811/1797c6db-5419-479b-8e62-9d0fde29d14c)
 
+Welcome to the Django Forum Project! This project is a dynamic forum application developed using the Django framework, designed to provide users with a platform to engage in discussions.
 
-Welcome to the Django Forum Project! This project is a dynamic forum application developed using the Django framework, designed to provide users with a platform to engage in discussions on a wide range of topics within a vibrant community environment.
+![ezgif-3-d356d34c9a](https://github.com/lucasasr25/DjangoForum/assets/90220811/af0a8b87-575f-4459-83c2-18dd5a32f879)
+
 
 ## Inspirations
 
