@@ -1,6 +1,6 @@
 # Django Forum Project
 
-![4](https://github.com/lucasasr25/django_forum/assets/90220811/8a9dc2d3-ceab-4d2b-a411-ee39a1d4609a)
+![4](https://github.com/lucasasr25/django_forum/assets/90220811/1797c6db-5419-479b-8e62-9d0fde29d14c)
 
 
 Welcome to the Django Forum Project! This project is a dynamic forum application developed using the Django framework, designed to provide users with a platform to engage in discussions on a wide range of topics within a vibrant community environment.
@@ -17,27 +17,26 @@ Tutorial Link: [Django Forum Project Tutorial](https://www.youtube.com/playlist?
 
 ## Create User
 
-![7](https://github.com/lucasasr25/django_forum/assets/90220811/fe63710d-9fe1-4510-b027-2de89ec929a1)
+![7](https://github.com/lucasasr25/django_forum/assets/90220811/096faf7f-6178-4ccb-bc2f-dd4e90a31960)
 
 ## Word Control
 
-![9](https://github.com/lucasasr25/django_forum/assets/90220811/d3c606f9-f5c0-4931-8519-2b670c00427a)
+![9](https://github.com/lucasasr25/django_forum/assets/90220811/c5a829a5-3866-4110-a149-3ecd95a5fde4)
 
 
 ## Posts/Topics
 
-![5](https://github.com/lucasasr25/django_forum/assets/90220811/ac26483c-95b4-450f-a293-7ada92b1e79a)
+![5](https://github.com/lucasasr25/django_forum/assets/90220811/d104a09d-c24f-4b19-a736-9193274bb99d)
 
 ## Posts
 
-![8](https://github.com/lucasasr25/django_forum/assets/90220811/ac9027d3-ca22-4e38-8f06-baebd1f1074a)
+![8](https://github.com/lucasasr25/django_forum/assets/90220811/492ca3c7-1dc5-420e-b303-83ddcbbf3417)
 
 ## Screenshots
 
-![2](https://github.com/lucasasr25/django_forum/assets/90220811/db6316bc-c82c-4353-ba93-68df573f07ac)
-![3](https://github.com/lucasasr25/django_forum/assets/90220811/0a16a575-2066-44da-8a21-ccc3354c5181)
-![6](https://github.com/lucasasr25/django_forum/assets/90220811/1acaa562-f8f9-4735-9f73-18a3e796894a)
-
+![2](https://github.com/lucasasr25/django_forum/assets/90220811/f8386ca1-f2eb-4d89-9310-1c6a03c51bc6)
+![3](https://github.com/lucasasr25/django_forum/assets/90220811/0d727419-1fbe-4e4f-a92f-7bddcdfb288b)
+![6](https://github.com/lucasasr25/django_forum/assets/90220811/0240c364-1b60-45ed-8353-1c62cd15ed7e)
 
 
 ## Contributing
