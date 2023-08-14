@@ -19,6 +19,10 @@ Tutorial Link: [Django Forum Project Tutorial](https://www.youtube.com/playlist?
 
 ![7](https://github.com/lucasasr25/django_forum/assets/90220811/fe63710d-9fe1-4510-b027-2de89ec929a1)
 
+### Word Control
+
+![9](https://github.com/lucasasr25/django_forum/assets/90220811/d3c606f9-f5c0-4931-8519-2b670c00427a)
+
 
 ### Posts/Topics
 
