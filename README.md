@@ -10,6 +10,7 @@ Welcome to the Django Forum Project! This project is a dynamic forum application
 ## Inspirations
 
 All graphical images featured in this project were generated using AI.
+non-ai: https://www.pxfuel.com/en/desktop-wallpaper-atxgg
 
 ## Getting Started
 
