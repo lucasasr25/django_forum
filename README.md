@@ -15,20 +15,20 @@ To get started with the Django Forum Project, you can follow the step-by-step tu
 
 Tutorial Link: [Django Forum Project Tutorial](https://www.youtube.com/playlist?list=PLMXItuyqfZ97qBrnK3KML_W4_AbfNrPDt)
 
-### Create User
+## Create User
 
 ![7](https://github.com/lucasasr25/django_forum/assets/90220811/fe63710d-9fe1-4510-b027-2de89ec929a1)
 
-### Word Control
+## Word Control
 
 ![9](https://github.com/lucasasr25/django_forum/assets/90220811/d3c606f9-f5c0-4931-8519-2b670c00427a)
 
 
-### Posts/Topics
+## Posts/Topics
 
 ![5](https://github.com/lucasasr25/django_forum/assets/90220811/ac26483c-95b4-450f-a293-7ada92b1e79a)
 
-### Posts
+## Posts
 
 ![8](https://github.com/lucasasr25/django_forum/assets/90220811/ac9027d3-ca22-4e38-8f06-baebd1f1074a)
 
